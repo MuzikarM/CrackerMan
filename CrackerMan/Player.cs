@@ -8,6 +8,8 @@ namespace CrackerMan
     public class Player: Entity
     {
 
+        PlayerMovement move;
+
         public Player(int x, int y, int id): base($"Player{id}")
         {
             this.transform.setPosition(x,y);
@@ -20,5 +22,14 @@ namespace CrackerMan
             addComponent(new Health(12));
         }
 
+        public Components.Direction Direction
+        {
+            get
+            {
+                if (move == null)
+                    move = this.getComponent<PlayerMovement>();
+                return move.Direction;
+            }
+        }
     }
 }

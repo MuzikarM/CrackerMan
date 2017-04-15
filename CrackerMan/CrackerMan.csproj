@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Components\Direction.cs" />
     <Compile Include="Components\Health.cs" />
+    <Compile Include="Components\PlayerAction.cs" />
     <Compile Include="Components\PlayerMovement.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Player.cs" />

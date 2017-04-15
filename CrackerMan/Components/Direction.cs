@@ -22,9 +22,9 @@ namespace CrackerMan.Components
             switch (dir)
             {
                 case Direction.DOWN:
-                    return new Vector2(0, -1);
-                case Direction.UP:
                     return new Vector2(0, 1);
+                case Direction.UP:
+                    return new Vector2(0, -1);
                 case Direction.LEFT:
                     return new Vector2(-1, 0);
                 case Direction.RIGHT:

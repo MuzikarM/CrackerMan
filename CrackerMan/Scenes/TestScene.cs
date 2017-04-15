@@ -55,6 +55,7 @@ namespace CrackerMan.Scenes
                 {
                     var player = new Player(x * 16, y * 16, 1);
                     player.addComponent(new PlayerMovement(Keys.Left, Keys.Up, Keys.Right, Keys.Down));
+                    player.addComponent(new PlayerAction(Keys.Space));
                     addEntity(player);
                     lookingForSpot = false;
                 }

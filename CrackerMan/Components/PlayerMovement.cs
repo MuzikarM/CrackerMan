@@ -14,6 +14,8 @@ namespace CrackerMan.Components
         Direction direction;
         Sprite sprite;
 
+        public Direction Direction { get => direction; private set => direction = value; }
+
         public PlayerMovement(Keys left, Keys up, Keys right, Keys down)
         {
             this.left = left;

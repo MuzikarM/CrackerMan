@@ -37,8 +37,9 @@ namespace CrackerMan.Components
                 sprite = this.getComponent<Sprite>();
                 if (sprite == null)
                     return;
-                sprite.tweenColorTo(Color.Red).setNextTween(sprite.tweenColorTo(Color.White));
             }
+            if (health == 0)
+                entity.destroy();
         }
 
         public override void debugRender(Graphics graphics)
@@ -47,7 +48,7 @@ namespace CrackerMan.Components
                 return;
             var pos = transform.position - new Vector2(8, 16);
             graphics.batcher.drawRect(pos, 16, 5, Color.Red);
-            graphics.batcher.drawRect(pos, health / maxHealth * 16, 5, Color.Green);
+            graphics.batcher.drawRect(pos, (health / (float)maxHealth) * 16, 5, Color.Green);
         }
 
 
