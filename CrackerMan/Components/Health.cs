@@ -32,14 +32,13 @@ namespace CrackerMan.Components
         public void Damage(int damage = 1)
         {
             health -= damage;
-            if (sprite == null)
-            {
-                sprite = this.getComponent<Sprite>();
-                if (sprite == null)
-                    return;
-            }
             if (health == 0)
                 entity.destroy();
+            if (sprite == null)
+                return;
+            sprite.tweenColorTo(Color.Red, .1f).start();
+            Core.schedule(0.1f, (t) => sprite.tweenColorTo(Color.White, 0.1f).start());
+
         }
 
         public override void debugRender(Graphics graphics)
