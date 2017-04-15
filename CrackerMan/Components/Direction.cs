@@ -39,9 +39,9 @@ namespace CrackerMan.Components
             switch (dir)
             {
                 case Direction.DOWN:
-                    return 270f;
-                case Direction.UP:
                     return 90f;
+                case Direction.UP:
+                    return 270f;
                 case Direction.LEFT:
                     return 180f;
                 case Direction.RIGHT:
