@@ -36,8 +36,8 @@ namespace CrackerMan.Components
                 entity.destroy();
             if (sprite == null)
                 return;
-            sprite.tweenColorTo(Color.Red, .1f).start();
-            Core.schedule(0.1f, (t) => sprite.tweenColorTo(Color.White, 0.1f).start());
+            sprite.tweenColorTo(Color.Red, .1f).setNextTween(sprite.tweenColorTo(Color.White, .1f)).start();
+            //Core.schedule(0.1f, (t) => sprite.tweenColorTo(Color.White, 0.1f).start());
 
         }
 
