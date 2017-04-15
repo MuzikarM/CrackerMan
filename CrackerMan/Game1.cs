@@ -1,15 +1,15 @@
-﻿using Nez.Samples.Scenes;
+﻿using CrackerMan.Scenes;
+using Nez;
 
-namespace Nez.Samples
+namespace CrackerMan
 {
 	public class Game1 : Core
 	{
 		protected override void Initialize()
 		{
 			base.Initialize();
-
-            
-			Window.AllowUserResizing = true;
+            debugRenderEnabled = true;
+			Window.AllowUserResizing = false;
 			scene = new TestScene();
 		}
 	}

@@ -14,7 +14,7 @@ using UIKit;
 #endif
 #endregion
 
-namespace Nez.Samples
+namespace CrackerMan
 {
 	#if __IOS__ || __TVOS__
     [Register("AppDelegate")]

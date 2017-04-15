@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{38A7BEED-51B0-4A6D-9522-2D9DF501B6D3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Nez.Samples</RootNamespace>
-    <AssemblyName>Nez.Samples</AssemblyName>
+    <RootNamespace>CrackerMan</RootNamespace>
+    <AssemblyName>CrackerMan</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MonoGamePlatform>DesktopGL</MonoGamePlatform>
   </PropertyGroup>
@@ -47,10 +47,17 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Direction.cs" />
+    <Compile Include="Components\Health.cs" />
+    <Compile Include="Components\PlayerMovement.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenes\TestScene.cs" />
+    <Compile Include="Tiles\DamagableTile.cs" />
+    <Compile Include="Tiles\TestTile.cs" />
+    <Compile Include="Tiles\Tile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
@@ -60,9 +67,18 @@
     <EmbeddedResource Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Sprites\PlayerOne.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Tiles\TestTile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="OpenTK.dll.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
