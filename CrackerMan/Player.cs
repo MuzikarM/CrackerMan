@@ -1,7 +1,11 @@
 ﻿using CrackerMan.Components;
+using CrackerMan.Items;
+using CrackerMan.Managers;
 using Microsoft.Xna.Framework.Graphics;
 using Nez;
 using Nez.Sprites;
+using System;
+using System.Collections.Generic;
 
 namespace CrackerMan
 {
@@ -20,6 +24,11 @@ namespace CrackerMan
             addComponent(new BoxCollider(12, 12));
             addComponent(new Sprite(scene.content.Load<Texture2D>("Sprites/PlayerOne")));
             addComponent(new Health(12));
+            var inv = new Inventory();
+            inv.AddItem(new ItemStack(ShopManager.TestItem, 12));
+            addComponent(inv);
+            inv.AddItem(new ItemStack(ShopManager.MagnetItem));
+
         }
 
         public Components.Direction Direction
