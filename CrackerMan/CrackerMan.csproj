@@ -54,6 +54,7 @@
     <Compile Include="Components\MagnetComponent.cs" />
     <Compile Include="Components\PlayerAction.cs" />
     <Compile Include="Components\PlayerMovement.cs" />
+    <Compile Include="Components\PlayerPickup.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\ItemStack.cs" />

@@ -1,4 +1,5 @@
-﻿using Nez;
+﻿using Microsoft.Xna.Framework;
+using Nez;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,8 @@ namespace CrackerMan.Components
         {
             if (collider == null)
                 return;
-            var colliders = Physics.boxcastBroadphaseExcludingSelf(collider, bounds, bounds);
+            var rect = new RectangleF(transform.position - new Vector2(bounds) / 2, new Vector2(bounds));
+            var colliders = Physics.boxcastBroadphaseExcludingSelf(collider, ref rect);
             var coins = colliders.Select((col) => col.entity as Coin);
             foreach (var coin in coins)
             {

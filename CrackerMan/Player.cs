@@ -28,6 +28,7 @@ namespace CrackerMan
             inv.AddItem(new ItemStack(ShopManager.TestItem, 12));
             addComponent(inv);
             inv.AddItem(new ItemStack(ShopManager.MagnetItem));
+            inv.addComponent(new PlayerPickup());
 
         }
 

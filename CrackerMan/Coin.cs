@@ -24,6 +24,8 @@ namespace CrackerMan
             this.amount = amount;
         }
 
+        public int Amount { get => amount; }
+
         public override void onAddedToScene()
         {
             addComponent(new Sprite(scene.content.Load<Texture2D>("Sprites/Coin")));

@@ -16,6 +16,7 @@ namespace CrackerMan.Components
         const int Height = 256;
         NezSpriteFont font;
         public override RectangleF bounds => GetRectangleFromId(entity.name[entity.name.Length-1]);
+        int money;
 
         public Inventory()
         {
@@ -26,6 +27,12 @@ namespace CrackerMan.Components
         public Inventory(List<ItemStack> items)
         {
             this.items = items;
+        }
+
+        public void addMoney(int amount)
+        {
+            money += amount;
+            Console.WriteLine($"Added {amount} to {money}");
         }
 
         public override void onAddedToEntity()
