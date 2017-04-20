@@ -47,11 +47,21 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coin.cs" />
     <Compile Include="Components\Direction.cs" />
     <Compile Include="Components\Health.cs" />
+    <Compile Include="Components\Inventory.cs" />
+    <Compile Include="Components\MagnetComponent.cs" />
     <Compile Include="Components\PlayerAction.cs" />
     <Compile Include="Components\PlayerMovement.cs" />
+    <Compile Include="Components\PlayerPickup.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Items\Hand.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\ItemStack.cs" />
+    <Compile Include="Items\MagnetItem.cs" />
+    <Compile Include="Items\TestItem.cs" />
+    <Compile Include="Managers\ShopManager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +71,7 @@
     <Compile Include="Tiles\Tile.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\Fonts\font.spritefont" />
     <None Include="Icon.png" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -68,7 +79,19 @@
     <EmbeddedResource Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Sprites\Coin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Items\Hand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Items\Magnet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Sprites\PlayerOne.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Items\Test.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\Tiles\TestTile.png">

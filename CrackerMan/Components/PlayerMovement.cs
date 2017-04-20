@@ -9,19 +9,21 @@ namespace CrackerMan.Components
     public class PlayerMovement: Component, IUpdatable
     {
 
-        Keys left, up, right, down;
+        Keys left, up, right, down, mod;
         Collider collider;
         Direction direction;
         Sprite sprite;
+        Inventory inv;
 
         public Direction Direction { get => direction; private set => direction = value; }
 
-        public PlayerMovement(Keys left, Keys up, Keys right, Keys down)
+        public PlayerMovement(Keys left, Keys up, Keys right, Keys down, Keys mod)
         {
             this.left = left;
             this.right = right;
             this.up = up;
             this.down = down;
+            this.mod = mod;
             direction = Direction.RIGHT;
         }
 
@@ -29,6 +31,7 @@ namespace CrackerMan.Components
         {
             collider = this.getComponent<Collider>();
             sprite = this.getComponent<Sprite>();
+            inv = this.getComponent<Inventory>();
         }
 
         private void UpdateSpriteRotation()
@@ -44,28 +47,42 @@ namespace CrackerMan.Components
                 return;
             var speed = new Vector2(0, 0);
             var prevDir = direction;
-            if (Input.isKeyDown(left))
+            if (Input.isKeyDown(mod))
             {
-                speed.X -= 1;
-                direction = Direction.LEFT;
+                if (Input.isKeyPressed(left))
+                {
+                    inv?.PreviousItem();
+                }
+                if (Input.isKeyPressed(right))
+                {
+                    inv?.NextItem();
+                }
             }
-            if (Input.isKeyDown(right))
+            else
             {
-                speed.X += 1;
-                direction = Direction.RIGHT;
+                if (Input.isKeyDown(left))
+                {
+                    speed.X -= 1;
+                    direction = Direction.LEFT;
+                }
+                if (Input.isKeyDown(right))
+                {
+                    speed.X += 1;
+                    direction = Direction.RIGHT;
+                }
+                if (Input.isKeyDown(up))
+                {
+                    speed.Y -= 1;
+                    direction = Direction.UP;
+                }
+                if (Input.isKeyDown(down))
+                {
+                    speed.Y += 1;
+                    direction = Direction.DOWN;
+                }
+                if (prevDir != direction)
+                    UpdateSpriteRotation();
             }
-            if (Input.isKeyDown(up))
-            {
-                speed.Y -= 1;
-                direction = Direction.UP;
-            }
-            if (Input.isKeyDown(down))
-            {
-                speed.Y += 1;
-                direction = Direction.DOWN;
-            }
-            if (prevDir != direction)
-                UpdateSpriteRotation();
             collider.collidesWithAny(ref speed, out var result);
             transform.position += speed;
 

@@ -9,17 +9,21 @@ namespace CrackerMan.Components
     {
 
         Keys key;
+        Inventory inventory;
 
         public PlayerAction(Keys actionKey)
         {
             key = actionKey;
         }
 
+        public override void onAddedToEntity()
+        {
+            inventory = this.getComponent<Inventory>();
+        }
+
         private void DoAction()
         {
-            var block = Physics.linecast(transform.position, transform.position + DirectionHelper.GetVector((entity as Player).Direction) * 16);
-            var health = block.collider?.getComponent<Health>();
-            health?.Damage(1);
+            inventory.UseItem();
         }
 
         public void update()

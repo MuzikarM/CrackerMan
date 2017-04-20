@@ -33,7 +33,10 @@ namespace CrackerMan.Components
         {
             health -= damage;
             if (health == 0)
+            {
                 entity.destroy();
+                return;
+            }
             if (sprite == null)
                 return;
             sprite.tweenColorTo(Color.Red, .1f).setNextTween(sprite.tweenColorTo(Color.White, .1f)).start();
