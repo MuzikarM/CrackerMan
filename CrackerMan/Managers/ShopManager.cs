@@ -18,6 +18,7 @@ namespace CrackerMan.Managers
 
         public static Item TestItem;
         public static Item MagnetItem;
+        public static Item HandItem;
 
         public ShopManager(Scene scene)
         {
@@ -31,8 +32,10 @@ namespace CrackerMan.Managers
         {
             TestItem = new TestItem(content);
             MagnetItem = new MagnetItem(content);
+            HandItem = new Hand(content);
             RegisterItem(TestItem);
             RegisterItem(MagnetItem);
+            RegisterItem(HandItem);
         }
 
 

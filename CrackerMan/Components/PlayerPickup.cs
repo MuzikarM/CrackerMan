@@ -31,7 +31,7 @@ namespace CrackerMan.Components
             {
                 if (coin == null)
                     continue;
-                inventory.addMoney(coin.Amount);
+                inventory.AddMoney(coin.Amount);
                 coin.destroy();
             }
         }

@@ -12,7 +12,7 @@ namespace CrackerMan.Items
 
     public class TestItem : Item
     {
-        public TestItem(ContentManager manager) : base("testItem", 20, .5f, manager.Load<Texture2D>("Sprites/Items/Test"))
+        public TestItem(ContentManager manager) : base("testItem", 20, .5f, manager.Load<Texture2D>("Sprites/Items/Test"), false)
         {
         }
 
